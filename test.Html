@@ -1,0 +1,75 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>登录页面</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            background-color: #f2f2f2;  
+            padding: 20px;  
+        }  
+        .container {  
+            max-width: 400px;  
+            margin: 0 auto;  
+            background-color: #fff;  
+            padding: 20px;  
+            border-radius: 5px;  
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);  
+        }  
+        h2 {  
+            text-align: center;  
+        }  
+        .form-group {  
+            margin-bottom: 20px;  
+        }  
+        .form-group label {  
+            display: block;  
+            margin-bottom: 5px;  
+        }  
+        .form-group input {  
+            width: 100%;  
+            padding: 10px;  
+            border-radius: 3px;  
+            border: 1px solid #ccc;  
+        }  
+        .form-group button {  
+            width: 100%;  
+            padding: 10px;  
+            background-color: #4CAF50;  
+            color: #fff;  
+            border: none;  
+            border-radius: 3px;  
+            cursor: pointer;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class="container">  
+        <h2>登录</h2>  
+        <form id="loginForm">  
+            <div class="form-group">  
+                <label for="username">用户名:</label>  
+                <input type="text" id="username" name="username" required>  
+            </div>  
+            <div class="form-group">  
+                <label for="password">密码:</label>  
+                <input type="password" id="password" name="password" required>  
+            </div>  
+            <div class="form-group">  
+                <button type="submit">登录</button>  
+            </div>  
+        </form>  
+    </div>  
+    <script>  
+        document.getElementById('loginForm').addEventListener('submit', function(event) {  
+            event.preventDefault(); // Prevent form submission and page refresh.  
+            var username = document.getElementById('username').value;  
+            var password = document.getElementById('password').value;  
+            // Do something with the username and password, like sending them to a server for validation. For this example, we will just store them in local storage.  
+            localStorage.setItem('username', username); // Store the username in local storage. You can access it using `localStorage.getItem('username')`.  
+            localStorage.setItem('password', password); // Store the password in local storage. You can access it using `localStorage.getItem('password')`. Remember to handle sensitive data securely in real applications.  
+            alert('登录成功!'); // Alert the user that they have successfully logged in. You can replace this with your own implementation to handle the successful login. For example, you might redirect them to another page or update their UI to show they are logged in.  
+        });  
+    </script>  
+</body>  
+</html>
